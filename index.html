@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoVision - Votre copilote digital pour l'achat automobile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .transition-smooth {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="https://i.imgur.com/J1RFxfB.png" alt="Logo AutoVision - voiture stylisée avec un graphique de croissance intégré" class="h-8 w-8 rounded-full">
+                        <span class="ml-2 text-xl font-bold text-gray-900">AutoVision</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#features" class="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Fonctionnalités</a>
+                        <a href="#how-it-works" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Comment ça marche</a>
+                        <a href="#pricing" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Tarifs</a>
+                        <a href="#testimonials" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Témoignages</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200">Se connecter</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Ouvrir le menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#features" class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Fonctionnalités</a>
+                <a href="#how-it-works" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Comment ça marche</a>
+                <a href="#pricing" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Tarifs</a>
+                <a href="#testimonials" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Témoignages</a>
+                <div class="px-4 py-2">
+                    <button class="w-full px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200">Se connecter</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Votre copilote digital pour l'achat automobile</h1>
+                    <p class="text-xl text-blue-100 mb-8">AutoVision vous recommande les meilleures voitures selon votre profil, et détecte les modèles à potentiel pour les investisseurs</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-smooth">Essai gratuit</button>
+                        <button class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition-smooth">Voir la démo</button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <img src="https://i.imgur.com/EenoKXN.png" alt="Dashboard AutoVision montrant des analyses de véhicules avec graphiques et recommandations, sur fond d'une route futuriste" class="w-[80%] ml-auto rounded-2xl shadow-xl" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Choisissez avec confiance</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">AutoVision analyse des milliers de données pour vous recommender les meilleurs choix.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl card-hover transition-smooth">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-blue-600 text-xl"></i>
+                    </div>
+			<h3 class="text-lg font-medium text-gray-900 mb-2">Analyse de valorisation</h3>
+                   	<p class="text-gray-600">Notre IA prédit le potentiel de revente et l'évolution des prix pour maximiser votre investissement.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl card-hover transition-smooth">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-search-dollar text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Agrégation intelligente</h3>
+                    <p class="text-gray-600">Scanne automatiquement les meilleures offres sur toutes les plateformes en fonction de vos critères.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl card-hover transition-smooth">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-user-cog text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Recommandations personnalisées</h3>
+                    <p class="text-gray-600">Un algorithme qui comprend vos besoins pour suggérer les véhicules les plus adaptés à votre profil.</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div id="how-it-works" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Comment ça marche</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">3 étapes simples pour trouver votre véhicule idéal</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-16">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="relative mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto relative z-10">1</div>
+                        <div class="h-1 w-full bg-gray-200 absolute top-8 left-0 right-0"></div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Définissez vos critères</h3>
+                    <p class="text-gray-600">Budget, usage, préférences... Notre questionnaire intelligent précise vos besoins</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="relative mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto relative z-10">2</div>
+                        <div class="h-1 w-full bg-gray-200 absolute top-8 left-0 right-0"></div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">L'IA analyse le marché</h3>
+                    <p class="text-gray-600">Notre technologie compare des milliers d'annonces et d'indicateurs économiques</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="relative mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto relative z-10">3</div>
+                        <div class="h-1 w-full bg-gray-200 absolute top-8 left-0 right-0"></div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Recevez vos recommandations</h3>
+                    <p class="text-gray-600">Une sélection personnalisée avec analyse qualité/prix et potentiel de revente</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- IA Car Recommendation Section -->
+<div id="reco-ia" class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Laissez l'IA vous recommander</h2>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Renseignez vos critères et laissez notre technologie vous guider vers le bon véhicule</p>
+    </div>
+    <form id="autoForm" class="bg-gray-50 p-8 rounded-lg shadow-md">
+      <div class="mb-4">
+        <label class="block font-semibold text-gray-700 mb-2">Quelle est l'utilisation principale du véhicule ? *</label>
+        <select name="motorisation" class="w-full px-4 py-2 border rounded-md">
+          <option value="Trajet urbains (Ville)">Ville</option>
+          <option value="Autoroutes / Longs trajets">Autoroute</option>
+          <option value="Mixte">Mixte</option>
+          <option value="Loisirs / Week-end">Loisirs</option>
+          <option value="Utilitaire / pro">Utilitaire</option>
+	  <option value="Investissement (collection, revente future)">Investissement</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block font-semibold text-gray-700 mb-2">Budget *</label>
+        <input type="text" name="budget" required placeholder="Ex: 20000 € ou 15 000 - 25 000 €" class="w-full px-4 py-2 border rounded-md">
+      </div>
+      <div class="mb-4">
+        <label class="block font-semibold text-gray-700 mb-2">Quel type de motorisation ? *</label>
+        <select name="motorisation" class="w-full px-4 py-2 border rounded-md">
+          <option value="Essence">Essence</option>
+          <option value="Diesel">Diesel</option>
+          <option value="Hybride">Hybride</option>
+          <option value="Electrique">Électrique</option>
+          <option value="Peu importe">Peu importe</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block font-semibold text-gray-700 mb-2">Type d'achat *</label>
+        <div class="flex space-x-4">
+          <label class="flex-1 text-center border rounded-md py-3 cursor-pointer bg-white hover:bg-blue-50">
+            <input type="radio" name="type" value="Particulier" class="sr-only" checked>
+            <span class="block font-medium">Particulier</span>
+            <span class="text-sm text-gray-500">Usage personnel</span>
+          </label>
+          <label class="flex-1 text-center border rounded-md py-3 cursor-pointer bg-white hover:bg-blue-50">
+            <input type="radio" name="type" value="Investisseur" class="sr-only">
+            <span class="block font-medium">Investisseur</span>
+            <span class="text-sm text-gray-500">Valeur future</span>
+          </label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="block font-semibold text-gray-700 mb-2">Préférences</label>
+        <textarea name="preferences" rows="4" placeholder="Ex : électrique, faible kilométrage, SUV, boîte auto..." class="w-full px-4 py-2 border rounded-md"></textarea>
+      </div>
+      <a href="https://tally.so/r/waq0ZW" target="_blank" class="w-full block text-center bg-blue-600 text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition"> Analyser avec l'IA
+      </a>
+    </form>
+    <div id="resultBox" class="mt-8 bg-blue-50 p-6 rounded-md hidden">
+      <h3 class="text-xl font-bold mb-2">Résultats de l'analyse IA :</h3>
+      <p id="resultText" class="text-gray-700">Analyse en cours...</p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('autoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const budget = e.target.budget.value;
+      const type = e.target.type.value;
+      const motorisation = e.target.motorisation.value;
+      const prefs = e.target.preferences.value;
+      const response = `🔎 <strong>Profil :</strong> ${type}<br>💰 <strong>Budget :</strong> ${budget}<br>⚙️ <strong>Motorisation :</strong> ${motorisation}<br>🔧 <strong>Préférences :</strong> ${prefs || 'Aucune'}<br><br>✅ <strong>Suggestion :</strong> Renault Mégane E-Tech 2022 ou BMW Série 1 118i - trouvés sur LaCentrale.`;
+      document.getElementById('resultText').innerHTML = response;
+      document.getElementById('resultBox').classList.remove('hidden');
+    });
+  </script>
+</div>
+
+<!-- Pricing Section -->
+<div id="pricing" class="py-16 bg-white">
+  <!-- ... (contenu existant) -->
+</div>
+    <!-- Pricing Section -->
+    <div id="pricing" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Choisissez votre formule</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Tarifs simples et transparents adaptés à vos besoins</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-lg font-medium text-gray-900 mb-1">Basique</h3>
+                        <p class="text-gray-600 mb-4">Parfait pour les achats occasionnels</p>
+                        <div class="flex items-baseline mb-4">
+                            <span class="text-4xl font-extrabold text-gray-900">9</span>
+                            <span class="ml-1 text-xl font-medium text-gray-500">€</span>
+                            <span class="ml-1 text-gray-500">/mois</span>
+                        </div>
+                        <button class="w-full px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200">S'abonner</button>
+                    </div>
+                    <div class="border-t border-gray-200 px-6 pt-6 pb-8 bg-gray-50">
+                        <h4 class="text-sm font-medium text-gray-900 mb-4">Ce qui est inclus :</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span class="text-gray-600">5 analyses par mois</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span class="text-gray-600">Accès aux alertes</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span class="text-gray-600">Comparateur de prix</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <i class="fas fa-times text-gray-400 mr-2"></i>
+                                <span>Analyse d'investissement</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-lg">
+                    <div class="p-6 bg-gradient-to-r from-blue-50 to-blue-100">
+                        <div class="flex justify-between">
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-1">Professionnel</h3>
+                                <p class="text-gray-600 mb-4">Pour investisseurs et pros</p>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">Populaire</span>
+                        </div>
+                        <div class="flex items-baseline mb-4">
+                            <span class="text-4xl font-extrabold text-gray-900">29</span>
+                            <span class="ml-1 text-xl font-medium text-gray-500">€</span>
+                            <span class="ml-1 text-gray-500">/mois</span>
+                        </div>
+                        <button class="w-full px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">S'abonner</button>
+                    </div>
+                    <div class="border-t border-gray-200 px-6 pt-6 pb-8 bg-gray-50">
+                        <h4 class="text-sm font-medium text-gray-900 mb-4">Ce qui est inclus :</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span class="text-gray-600">20 analyses par mois</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span class="text-gray-600">Alertes en temps réel</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span class="text-gray-600">Analyse de valorisation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span class="text-gray-600">Rapports détaillés</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-lg font-medium text-gray-900 mb-1">Entreprise</h3>
+                        <p class="text-gray-600 mb-4">Pour les concessionnaires</p>
+                        <div class="flex items-baseline mb-4">
+                            <span class="text-4xl font-extrabold text-gray-900">99</span>
+                            <span class="ml-1 text-xl font-medium text-gray-500">€</span>
+                            <span class="ml-1 text-gray-500">/mois</span>
+                        </div>
+                        <button class="w-full px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200">S'abonner</button>
+                    </div>
+                    <div class="border-t border-gray-200 px-6 pt-6 pb-8 bg-gray-50">
+                        <h4 class="text-sm font-medium text-gray-900 mb-4">Ce qui est inclus :</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span class="text-gray-600">Analyses illimitées</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span class="text-gray-600">API d'intégration</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span class="text-gray-600">Support prioritaire</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span class="text-gray-600">Formation d'équipe</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Ils nous font confiance</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Ce que nos utilisateurs disent de nous</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition-smooth">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ba69e23a-ed8f-4b21-9b84-c9927d0f03f1.png" alt="Photo de profil d'Alexandre Durand, homme d'affaires de 35 ans souriant" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-900">Alexandre Durand</h4>
+                            <p class="text-gray-500 text-sm">Investisseur automobile</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600">
+                        <p>"Grâce à AutoVision, j'ai revendu ma Porsche 911 avec 18% de plus-value après seulement 8 mois. Leur analyse du marché est d'une précision redoutable."</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition-smooth">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/080b02f6-9e06-43d4-a319-494a531ba550.png" alt="Photo de profil de Sophie Lemaire, femme tenant un vélo électrique devant un paysage urbain" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-900">Sophie Lemaire</h4>
+                            <p class="text-gray-500 text-sm">Particulier</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600">
+                        <p>"Je cherchais une voiture économique et fiable pour mes trajets quotidiens. AutoVision m'a trouvé la meilleure affaire, exactement adaptée à mes besoins !"</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition-smooth">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e8cf9cef-8d7c-47ca-8cce-f76b1b99dbb3.png" alt="Photo de profil de Thomas Kessler, concessionnaire automobile portant une veste de costume" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-gray-900">Thomas Kessler</h4>
+                            <p class="text-gray-500 text-sm">Concessionnaire</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600">
+                        <p>"L'outil parfait pour identifier les bons modèles à stocker. Depuis que j'utilise AutoVision, ma marge moyenne a augmenté de 12%."</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold mb-6">Prêt à trouver votre prochaine voiture ?</h2>
+                <p class="text-xl text-blue-100 mb-8">Inscrivez-vous maintenant et bénéficiez de 7 jours d'essai gratuit</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-blue-600 px-8 py-4 rounded-lg font-medium hover:bg-blue-50 transition-smooth text-lg">Commencer maintenant</button>
+                    <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition-smooth text-lg">Parler à un conseiller</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trusted By Section -->
+    <div class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-500 mb-8">Partenaires technologiques</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b9774d8e-002d-47df-8d30-d36d71d82c92.png" alt="Logo LaCentrale blanche sur fond bleu" class="h-16 mx-auto opacity-70">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/663c77fd-810d-44a7-8ab1-1a70311c8f07.png" alt="Logo LeBonCoin stylisé en bleu foncé" class="h-16 mx-auto opacity-70">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/feea3482-97ba-4468-8027-4b433e0bef83.png" alt="Logo Argus avec typographie grise moderne" class="h-16 mx-auto opacity-70">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c4bab13e-1601-4329-ad97-0408516b4843.png" alt="Logo ParuVendu avec un écusson bleu et blanc" class="h-16 mx-auto opacity-70">
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Questions fréquentes</h2>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="toggleFAQ('faq1')">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-medium text-gray-900">Comment AutoVision accède aux données des sites d'annonces ?</h3>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300" id="faq1-icon"></i>
+                            </div>
+                        </button>
+                        <div class="px-6 py-4 hidden" id="faq1">
+                            <p class="text-gray-600">Nous utilisons des API officielles où disponibles, et dans le respect des conditions d'utilisation de chaque plateforme. Pour les sites sans API ouverte, nous analysons uniquement les données publiques sans contenu protégé.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="toggleFAQ('faq2')">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-medium text-gray-900">L'analyse de valorisation est-elle fiable ?</h3>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300" id="faq2-icon"></i>
+                            </div>
+                        </button>
+                        <div class="px-6 py-4 hidden" id="faq2">
+                            <p class="text-gray-600">Notre modèle prédictif atteint 92% de précision sur les 12 derniers mois, selon nos tests. Il prend en compte les tendances historiques, l'état du marché, les caractéristiques techniques et plus de 20 indicateurs économiques.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="toggleFAQ('faq3')">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-medium text-gray-900">Puis-je essayer gratuitement ?</h3>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300" id="faq3-icon"></i>
+                            </div>
+                        </button>
+                        <div class="px-6 py-4 hidden" id="faq3">
+                            <p class="text-gray-600">Absolument ! Nous offrons un essai de 7 jours sans engagement avec accès à toutes les fonctionnalités de la formule Basique. Aucune carte bancaire n'est nécessaire pour commencer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <!-- Logo and info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.imgur.com/J1RFxfB.png" alt="Logo AutoVision blanc sur fond noir" class="h-8 w-8 rounded-full">
+                        <span class="ml-2 text-xl font-bold">AutoVision</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Votre copilote digital pour l'achat automobile intelligent.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h3 class="text-white uppercase text-xs font-semibold mb-4 tracking-wider">Produit</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Fonctionnalités</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Tarifs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">API</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h3 class="text-white uppercase text-xs font-semibold mb-4 tracking-wider">Ressources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Centre d'aide</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-white uppercase text-xs font-semibold mb-4 tracking-wider">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Abonnez-vous pour recevoir nos dernières actualités et conseils.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Votre email" class="px-4 py-2 w-full rounded-l-lg bg-gray-800 text-white border-gray-700 border focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 AutoVision. Tous droits réservés.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Mentions légales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">CGU</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ toggle function
+        function toggleFAQ(id) {
+            const faq = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            
+            if (faq.classList.contains('hidden')) {
+                faq.classList.remove('hidden');
+                icon.classList.add('transform', 'rotate-180');
+            } else {
+                faq.classList.add('hidden');
+                icon.classList.remove('transform', 'rotate-180');
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
